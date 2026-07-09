@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kriptos | Cifrado local seguro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <a class="brand" href="#">
+            <span class="brand__icon">K</span>
+            <span>Kriptos</span>
+          </a>
+          <div class="topbar__links">
+            <a href="#encrypt">Cifrar</a>
+            <a href="#decrypt">Descifrar</a>
+            <a href="#seguridad">Seguridad</a>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <p class="eyebrow">Cifrado local · Privacidad garantizada</p>
+          <h1>Kriptos</h1>
+          <p class="hero__text">
+            Convierte tus documentos en información protegida con un flujo moderno,
+            claro y confiable, todo directamente desde tu navegador.
+          </p>
+          <div class="hero__actions">
+            <a href="#encrypt" class="button button--primary">Cifrar documento</a>
+            <a href="#decrypt" class="button button--secondary">Descifrar documento</a>
+          </div>
+          <div class="hero__stats">
+            <div>
+              <strong>100%</strong>
+              <span>Procesado localmente</span>
+            </div>
+            <div>
+              <strong>AES-GCM</strong>
+              <span>Algoritmo de cifrado</span>
+            </div>
+            <div>
+              <strong>PBKDF2</strong>
+              <span>Derivación segura de claves</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="card" id="encrypt">
+          <div class="card__header">
+            <div>
+              <h2>Cifrar documento</h2>
+              <p>Sube un archivo de texto o pega el contenido directamente.</p>
+            </div>
+            <span class="status-chip">Paso 1</span>
+          </div>
+
+          <label class="upload-zone" for="fileInput">
+            <span class="upload-zone__icon">📄</span>
+            <strong>Selecciona un documento</strong>
+            <span>Archivos .txt o texto plano</span>
+            <input id="fileInput" type="file" accept=".txt,text/plain" />
+          </label>
+
+          <label class="field">
+            <span>Contenido del documento</span>
+            <textarea id="plainText" rows="8" placeholder="Escribe o pega el contenido aquí..."></textarea>
+          </label>
+
+          <label class="field">
+            <span>Contraseña</span>
+            <input id="encryptPassword" type="password" placeholder="Ingresa una contraseña segura" />
+          </label>
+
+          <button id="encryptBtn" class="button button--primary">Cifrar documento</button>
+
+          <div id="encryptResult" class="result"></div>
+        </section>
+
+        <section class="card" id="decrypt">
+          <div class="card__header">
+            <div>
+              <h2>Descifrar documento</h2>
+              <p>Ingresa el texto cifrado, el IV, el salt y la contraseña para recuperar el contenido.</p>
+            </div>
+            <span class="status-chip status-chip--muted">Paso 2</span>
+          </div>
+
+          <label class="field">
+            <span>Texto cifrado (Base64)</span>
+            <textarea id="cipherText" rows="6" placeholder="Pega el resultado del cifrado"></textarea>
+          </label>
+
+          <label class="field">
+            <span>IV (Base64)</span>
+            <input id="ivInput" type="text" placeholder="Pega el IV generado" />
+          </label>
+
+          <label class="field">
+            <span>Salt (Base64)</span>
+            <input id="saltInput" type="text" placeholder="Pega el salt generado" />
+          </label>
+
+          <label class="field">
+            <span>Contraseña</span>
+            <input id="decryptPassword" type="password" placeholder="Ingresa la misma contraseña" />
+          </label>
+
+          <button id="decryptBtn" class="button button--secondary">Descifrar documento</button>
+
+          <div id="decryptResult" class="result"></div>
+        </section>
+      </main>
+
+      <section class="container" id="seguridad">
+        <div class="section-heading">
+          <p class="eyebrow">Por qué elegir Kriptos</p>
+          <h2>Una experiencia de cifrado profesional, clara y confiable</h2>
+        </div>
+
+        <div class="features">
+          <article class="feature-card">
+            <h3>Protección local</h3>
+            <p>El cifrado se ejecuta en tu navegador para mantener tus documentos fuera de exposición.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Flujo intuitivo</h3>
+            <p>Un proceso guiado para cargar, cifrar, descifrar y recuperar información sin fricción.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Listo para escalar</h3>
+            <p>La base está preparada para evolucionar hacia archivos PDF, autenticación y almacenamiento seguro.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container workflow">
+        <article class="info-card">
+          <h3>Cómo funciona</h3>
+          <ul>
+            <li>1. Escribe o sube el contenido del documento.</li>
+            <li>2. Define una contraseña segura y cifra con un solo clic.</li>
+            <li>3. Guarda el IV y el salt para recuperar el contenido después.</li>
+          </ul>
+        </article>
+        <article class="info-card info-card--accent">
+          <h3>Seguridad por diseño</h3>
+          <p>Kriptos combina AES-GCM con PBKDF2 para ofrecer una capa sólida de protección sin depender de servidores externos.</p>
+        </article>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
